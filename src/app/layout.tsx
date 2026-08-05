@@ -13,8 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "cursor-drag-layout",
-  description: "Drag layout web app scaffolded with Next.js, Tailwind, and shadcn/ui",
+  title: "Visual UI Layout Playground",
+  description:
+    "Basic Next.js + Tailwind playground for testing Design Mode → clean layout skill flows",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -22,8 +23,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col" suppressHydrationWarning>
+        {children}
+      </body>
     </html>
   );
 }
