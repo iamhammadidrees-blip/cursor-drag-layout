@@ -1,3 +1,4 @@
+import { DemoButton } from "@/components/demo-button";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -52,9 +53,7 @@ export default function Home() {
               Basic targets for move, resize, and spacing tests
             </p>
           </div>
-          <Badge className="border-primary-border bg-primary-soft text-accent-foreground">
-            Demo
-          </Badge>
+          <DemoButton />
         </header>
 
         <main className="flex flex-1 flex-col gap-8 p-6">
