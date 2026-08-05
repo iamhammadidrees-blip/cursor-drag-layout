@@ -12,22 +12,28 @@ import {
 
 export default function Home() {
   return (
-    <div className="flex min-h-full flex-1 bg-background text-foreground">
+    <div className="flex min-h-full flex-1 bg-transparent text-foreground">
       {/* Zone: sidebar width / nested layout */}
       <aside
         data-measure="sidebar"
-        className="flex w-56 shrink-0 flex-col gap-3 border-r border-border bg-muted/40 p-4"
+        className="flex w-56 shrink-0 flex-col gap-3 border-r border-white/15 bg-brand-gradient-y p-4 text-white"
       >
         <p className="text-sm font-medium tracking-tight">Playground</p>
-        <nav className="flex flex-col gap-1 text-sm text-muted-foreground">
-          <span className="rounded-md bg-background px-2 py-1.5 text-foreground">
+        <nav className="flex flex-col gap-1 text-sm text-white/80">
+          <span className="rounded-md bg-white/20 px-2 py-1.5 font-medium text-white">
             Layout lab
           </span>
-          <span className="rounded-md px-2 py-1.5">Resize card</span>
-          <span className="rounded-md px-2 py-1.5">Alignment</span>
-          <span className="rounded-md px-2 py-1.5">Spacing</span>
+          <span className="rounded-md px-2 py-1.5 hover:bg-white/10 hover:text-white">
+            Resize card
+          </span>
+          <span className="rounded-md px-2 py-1.5 hover:bg-white/10 hover:text-white">
+            Alignment
+          </span>
+          <span className="rounded-md px-2 py-1.5 hover:bg-white/10 hover:text-white">
+            Spacing
+          </span>
         </nav>
-        <p className="mt-auto text-xs text-muted-foreground">
+        <p className="mt-auto text-xs text-white/70">
           Drag in Design Mode, then invoke the skill.
         </p>
       </aside>
@@ -46,7 +52,9 @@ export default function Home() {
               Basic targets for move, resize, and spacing tests
             </p>
           </div>
-          <Badge variant="secondary">Demo</Badge>
+          <Badge className="border-primary-border bg-primary-soft text-accent-foreground">
+            Demo
+          </Badge>
         </header>
 
         <main className="flex flex-1 flex-col gap-8 p-6">
@@ -55,7 +63,10 @@ export default function Home() {
             <h2 className="text-sm font-medium text-muted-foreground">
               1. Resize card
             </h2>
-            <Card data-measure="hero-card" className="w-full max-w-sm">
+            <Card
+              data-measure="hero-card"
+              className="w-full max-w-sm border-primary-border/60"
+            >
               <CardHeader>
                 <CardTitle>Resize me</CardTitle>
                 <CardDescription>
@@ -63,7 +74,12 @@ export default function Home() {
                   to a Tailwind width utility.
                 </CardDescription>
                 <CardAction>
-                  <Badge variant="outline">w / max-w</Badge>
+                  <Badge
+                    variant="outline"
+                    className="border-primary-border text-primary"
+                  >
+                    w / max-w
+                  </Badge>
                 </CardAction>
               </CardHeader>
               <CardContent className="text-sm text-muted-foreground">
@@ -78,7 +94,7 @@ export default function Home() {
                 — not arbitrary pixels.
               </CardContent>
               <CardFooter>
-                <Button type="button" size="sm">
+                <Button type="button" size="sm" variant="brand">
                   Primary action
                 </Button>
               </CardFooter>
@@ -92,11 +108,11 @@ export default function Home() {
             </h2>
             <div
               data-measure="align-row"
-              className="flex justify-start gap-2 rounded-lg border border-dashed border-border p-3"
+              className="flex justify-start gap-2 rounded-lg border border-dashed border-primary-border p-3"
             >
               <div
                 data-measure="align-item-1"
-                className="flex h-16 w-16 items-center justify-center rounded-md bg-secondary text-xs font-medium"
+                className="flex h-16 w-16 items-center justify-center rounded-md bg-secondary text-xs font-medium text-secondary-foreground"
               >
                 A
               </div>
@@ -108,7 +124,7 @@ export default function Home() {
               </div>
               <div
                 data-measure="align-item-3"
-                className="ml-2 flex h-16 w-16 items-center justify-center rounded-md bg-secondary text-xs font-medium"
+                className="ml-2 flex h-16 w-16 items-center justify-center rounded-md bg-secondary text-xs font-medium text-secondary-foreground"
               >
                 C
               </div>
@@ -138,7 +154,7 @@ export default function Home() {
               </div>
               <div
                 data-measure="spacing-block-3"
-                className="rounded-md bg-muted px-3 py-2 text-sm"
+                className="rounded-md bg-primary-soft px-3 py-2 text-sm text-accent-foreground"
               >
                 Block three
               </div>
