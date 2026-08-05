@@ -1,17 +1,29 @@
 "use client";
 
-import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import { useRef } from "react";
+import { DotLottieReact, type DotLottie } from "@lottiefiles/dotlottie-react";
 
 import { Button } from "@/components/ui/button";
 
 export function DemoButton() {
+  const dotLottieRef = useRef<DotLottie | null>(null);
+
   return (
     <Button
       type="button"
       size="lg"
       variant="outline"
-      className="relative h-20 min-w-52 overflow-hidden border-primary-border bg-primary-soft px-12 text-xl font-semibold text-accent-foreground shadow-sm hover:bg-primary-soft/90 [&_canvas]:absolute [&_canvas]:inset-0 [&_canvas]:size-full"
+      className="relative size-16 shrink-0 overflow-hidden border-primary-border bg-primary-soft p-0 text-sm font-semibold text-accent-foreground shadow-sm hover:bg-primary-soft/90 [&_canvas]:absolute [&_canvas]:inset-0 [&_canvas]:size-full"
       aria-label="Demo"
+      onMouseEnter={() => {
+        void dotLottieRef.current?.play();
+      }}
+      onMouseLeave={() => {
+        const player = dotLottieRef.current;
+        if (!player) return;
+        player.pause();
+        player.setFrame(0);
+      }}
     >
       <span
         aria-hidden
@@ -20,8 +32,11 @@ export function DemoButton() {
         <DotLottieReact
           src="/kpk98v7shw.lottie"
           loop
-          autoplay
-          layout={{ fit: "fill", align: [0.5, 0.5] }}
+          autoplay={false}
+          layout={{ fit: "contain", align: [0.5, 0.5] }}
+          dotLottieRefCallback={(dotLottie) => {
+            dotLottieRef.current = dotLottie;
+          }}
           style={{
             position: "absolute",
             inset: 0,
