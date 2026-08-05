@@ -18,7 +18,7 @@ export function DemoButton() {
         className="pointer-events-none absolute inset-0 z-0"
       >
         <DotLottieReact
-          src="/demo-animation.lottie"
+          src="/kpk98v7shw.lottie"
           loop
           autoplay
           layout={{ fit: "fill", align: [0.5, 0.5] }}
