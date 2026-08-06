@@ -6,10 +6,10 @@ Turns rough Design Mode / visual layout edits into clean, minimal Tailwind + des
 
 ## Install (drop into a project)
 
-Clone this branch, then copy the skill folder:
+This repo publishes the skill only (no app). Clone it, then copy the skill folder into **your** Next.js + Tailwind project:
 
 ````bash
-git clone -b feat/visual-ui-layout-skill https://github.com/iamhammadidrees-blip/cursor-drag-layout.git
+git clone https://github.com/iamhammadidrees-blip/cursor-drag-layout.git
 
 # project-level (shared with your team)
 mkdir -p your-app/.cursor/skills
@@ -19,7 +19,7 @@ cp -r cursor-drag-layout/.cursor/skills/visual-ui-layout your-app/.cursor/skills
 **Windows (PowerShell):**
 
 ````powershell
-git clone -b feat/visual-ui-layout-skill https://github.com/iamhammadidrees-blip/cursor-drag-layout.git
+git clone https://github.com/iamhammadidrees-blip/cursor-drag-layout.git
 New-Item -ItemType Directory -Force -Path your-app\.cursor\skills
 Copy-Item -Recurse cursor-drag-layout\.cursor\skills\visual-ui-layout your-app\.cursor\skills\
 ````
